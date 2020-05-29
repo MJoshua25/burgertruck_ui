@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                   Positioned(
-                    top: 100.0,
+                    top: 180.0,
                     left: 5.0,
                     child: Row(
                       children: <Widget>[
@@ -99,10 +99,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(
                           width: 2.0,
                         ),
-                        Text('4.0',
+                        Text(
+                          '4.0',
                           style: TextStyle(
                             color: Colors.white,
+                            fontWeight: FontWeight.bold,
                           ),
+                        ),
+                        SizedBox(
+                          width: 4.0,
+                        ),
+                        SelectedPhoto(
+                          photoIndex: photoIndex,
+                          numberOfDots: photos.length,
                         ),
                       ],
                     ),
