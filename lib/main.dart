@@ -96,6 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           Icons.star,
                           color: Colors.white,
                         ),
+                        SizedBox(
+                          width: 2.0,
+                        ),
+                        Text('4.0',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                       ],
                     ),
                   ),
