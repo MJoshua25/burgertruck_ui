@@ -61,8 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: <Widget>[
                       IconButton(
                         icon: Icon(Icons.arrow_back_ios),
-                        onPressed: null,
+                        onPressed: (){},
                         color: Colors.white,
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.favorite),
+                        onPressed: (){},
+                        color: Colors.pink,
                       ),
                     ],
                   )
