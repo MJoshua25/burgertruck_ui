@@ -17,7 +17,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int photoIndex = 0;
   List<String> photos = [
     'assets/burger1.jpg',
@@ -26,13 +25,13 @@ class _MyHomePageState extends State<MyHomePage> {
     'assets/burger4.jpg',
   ];
 
-  void _previousImage(){
+  void _previousImage() {
     setState(() {
-      photoIndex = photoIndex > 0 ? photoIndex -1 : 0;
+      photoIndex = photoIndex > 0 ? photoIndex - 1 : 0;
     });
   }
 
-  void _nextImage(){
+  void _nextImage() {
     setState(() {
       photoIndex = photoIndex < photos.length - 1 ? photoIndex + 1 : photoIndex;
     });
@@ -40,7 +39,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: ListView(
+        shrinkWrap: true,
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Stack(
+                children: <Widget>[
+                  Container(
+                    height: 210.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(photos[photoIndex]),
+                        fit: BoxFit.cover
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -53,14 +75,14 @@ class SelectedPhoto extends StatelessWidget {
   Widget _inactivePhoto() {
     return new Container(
         child: new Padding(
-          padding: const EdgeInsets.only(left: 3.0, right: 3.0),
-          child: Container(
-            height: 8.0,
-            width: 8.0,
-            decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(4.0)),
-          ),
-        ));
+      padding: const EdgeInsets.only(left: 3.0, right: 3.0),
+      child: Container(
+        height: 8.0,
+        width: 8.0,
+        decoration: BoxDecoration(
+            color: Colors.grey, borderRadius: BorderRadius.circular(4.0)),
+      ),
+    ));
   }
 
   Widget _activePhoto() {
