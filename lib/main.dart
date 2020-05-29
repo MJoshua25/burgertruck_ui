@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -51,11 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 210.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(photos[photoIndex]),
-                        fit: BoxFit.cover
-                      ),
+                          image: AssetImage(photos[photoIndex]),
+                          fit: BoxFit.cover),
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.arrow_back_ios),
+                        onPressed: null,
+                        color: Colors.white,
+                      ),
+                    ],
+                  )
                 ],
               )
             ],
